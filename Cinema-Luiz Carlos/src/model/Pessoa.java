@@ -13,7 +13,14 @@ public class Pessoa {
 	private String titulo;
 	private int idfilme;
 
-
+	public Pessoa(int idpessoa, String nomepessoa, Date dataDeNascimento, int idade, String sexo) {
+		this.idpessoa = idpessoa;
+		this.nomepessoa = nomepessoa;
+		this.dataDeNascimento = dataDeNascimento;
+		this.idade = idade;
+		this.sexo = sexo;
+	}
+	
 	public Pessoa(int idpessoa, String nomepessoa, Date dataDeNascimento, int idade, String sexo, int tipoPessoa) {
 		this.idpessoa = idpessoa;
 		this.nomepessoa = nomepessoa;

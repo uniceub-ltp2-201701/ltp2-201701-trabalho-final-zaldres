@@ -21,6 +21,30 @@ public class ListarPessoasDAO {
 			ResultSet rs = null;
 			
 			try{
+				ps = conexao.prepareStatement("SELECT distinct p.idpessoa, p.nomepessoa, p.datadenascimento, p.idade, p.sexo FROM cinema.pessoa AS p ORDER BY nomepessoa;");
+				rs = ps.executeQuery();
+				
+				
+				while (rs.next()){
+					Pessoa p = new Pessoa(rs.getInt("idpessoa"), rs.getString("nomepessoa"), rs.getDate("dataDeNascimento"), rs.getInt("idade"), rs.getString("sexo"));
+					ListarPessoas.add(p);
+				}
+				rs.close();
+				ps.close();
+				}catch (Exception e){
+				e.printStackTrace();
+			
+			}
+			return ListarPessoas;
+		}
+		
+		public ArrayList<Pessoa> getListarElenco(){
+			 ArrayList<Pessoa> ListarPessoas = new ArrayList<Pessoa>();
+			//Objetos para obter dados dos funcionarios
+			PreparedStatement ps = null;
+			ResultSet rs = null;
+			
+			try{
 				ps = conexao.prepareStatement("SELECT distinct p.idpessoa, p.nomepessoa, p.datadenascimento, p.idade, p.sexo, e.tipopessoa FROM cinema.pessoa AS p, cinema.elenco AS e WHERE p.idpessoa = e.idpessoa order by nomepessoa;");
 				rs = ps.executeQuery();
 				

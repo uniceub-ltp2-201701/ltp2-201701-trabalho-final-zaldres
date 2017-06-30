@@ -19,13 +19,13 @@ import model.Pessoa;
  * Servlet implementation class ServletListarPessoasAdmin
  */
 @WebServlet("/listarPessoasAdmin")
-public class ServletListarPessoasAdmin extends HttpServlet {
+public class ServletListarPessoasEmpregadasAdmin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ServletListarPessoasAdmin() {
+    public ServletListarPessoasEmpregadasAdmin() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -37,11 +37,11 @@ public class ServletListarPessoasAdmin extends HttpServlet {
 		Connection conexao = new Conexao().getConexao();
 		
 		ListarPessoasDAO lpd = new ListarPessoasDAO(conexao);
-		ArrayList<Pessoa> ListarPessoas = lpd.getListarPessoas();
+		ArrayList<Pessoa> ListarPessoas = lpd.getListarElenco();
 		request.setAttribute("listarPessoas", ListarPessoas);
 		
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/listarTodasPessoasAdmin.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/listarTodasPessoasEmpregadasAdmin.jsp");
 		rd.forward(request, response);
 }
 }

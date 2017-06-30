@@ -39,11 +39,11 @@ public class DetalharFilmesDAO {
 				PreparedStatement ps = null;
 				ResultSet rs = null;
 				try{
-					ps = conexao.prepareStatement("SELECT distinct p.idpessoa, p.nomepessoa, e.tipopessoa, z.titulo,e.personagem ,z.idfilme FROM cinema.pessoa AS p, cinema.elenco AS e, cinema.filme AS z WHERE p.idpessoa = e.idpessoa and e.idfilme = z.idfilme and z.idfilme = ? ;");
+					ps = conexao.prepareStatement("SELECT distinct p.idpessoa, p.nomepessoa, e.tipopessoa, z.titulo,e.personagem ,z.idfilme, e.idelenco FROM cinema.pessoa AS p, cinema.elenco AS e, cinema.filme AS z WHERE p.idpessoa = e.idpessoa and e.idfilme = z.idfilme and z.idfilme = ? ;");
 					ps.setString(1, idFilme);
 					rs=ps.executeQuery();
 					while(rs.next()){
-						Filme ef = new Filme(rs.getInt("idfilme"), rs.getString("titulo"), rs.getInt("idpessoa"), rs.getString("nomepessoa"), rs.getInt("tipoPessoa"), rs.getString("personagem"));
+						Filme ef = new Filme(rs.getInt("idfilme"), rs.getString("titulo"), rs.getInt("idpessoa"), rs.getString("nomepessoa"), rs.getInt("tipoPessoa"), rs.getString("personagem"), rs.getInt("idelenco"));
 						ElencoFilme.add(ef);
 					}rs.close();
 					ps.close();

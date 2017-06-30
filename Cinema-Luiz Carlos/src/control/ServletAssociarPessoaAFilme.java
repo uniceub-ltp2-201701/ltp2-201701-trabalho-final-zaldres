@@ -8,13 +8,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.Conexao;
-import dao.IncluiFilmeDAO;
 import model.Filme;
 import dao.AssociarPessoaAFilmeDAO;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.util.ArrayList;
-import java.io.PrintWriter;
+
 
 /**
  * Servlet implementation class ServletAssociarPessoaAFilme

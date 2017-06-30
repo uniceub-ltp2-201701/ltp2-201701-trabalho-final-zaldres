@@ -18,6 +18,7 @@
 		<INPUT TYPE='SUBMIT' VALUE='Incluir'>
 		</FORM>
 		
+		
 		<hr>
 		<form action="/Cinema-Luiz_Carlos/index"><input type="submit" value="Log out"></form>
 </body>

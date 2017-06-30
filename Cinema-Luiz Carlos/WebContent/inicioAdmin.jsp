@@ -20,12 +20,12 @@
 	<form action="/Cinema-Luiz_Carlos/inicioAdmin"><input type="submit" value="inicio"></form>
 	
 	<h1>Bem vindo ao Banco de Dados Administrador</h1>
-	<a href="/Cinema-Luiz_Carlos/listarFilmesAdmin">Listar Todos os Filmes</a> <br/>
+	<a href="/Cinema-Luiz_Carlos/listarFilmesAdmin">Listar Todos os Filmes/Tabela de Excluir Filme</a> <br/>
 	<a href="/Cinema-Luiz_Carlos/listarPessoasAdmin">Listar Todas os Atores/Diretores</a> <br />
 	<a href="/Cinema-Luiz_Carlos/listarAtoresAdmin">Listar Todas os Atores</a> <br />
 	<a href="/Cinema-Luiz_Carlos/listarDiretoresAdmin">Listar Todas os Diretores</a> <br />
 	<a href="/Cinema-Luiz_Carlos/adicionarPessoas.jsp">Registrar Pessoas no Banco de Dados</a> <br />
-	<a href="/Cinema-Luiz_Carlos/adicionarFilmes.jsp">Registrar Filmes no Banco de Dados</a> <br />
+	<a href="/Cinema-Luiz_Carlos/adicionarFilmes.jsp">Registrar Filmes ou criar novas categorias para filmes no Banco de Dados</a> <br />
 
 	<form action="/Cinema/consultarFilme" method="get">
 		Buscar por titulo: <input type="text" name="titulo"><p>

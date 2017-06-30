@@ -18,6 +18,13 @@
 	    Pontuação: <INPUT TYPE='TEXT' NAME='pontuacao'><BR>
 	    <INPUT TYPE='SUBMIT' VALUE='Incluir'>
 		</FORM>
+		
+		<hr>
+		<H2>Criar Nova Categoria de Filme</H2>
+		<FORM ACTION='criarGenero'>
+		Nome da categoria: <INPUT TYPE='TEXT' NAME='nomecategoria'><BR>
+		<INPUT TYPE='SUBMIT' VALUE='Criar'>
+		</FORM>
 		<hr>
 		<form action="/Cinema-Luiz_Carlos/index"><input type="submit" value="Log out"></form>
 

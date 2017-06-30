@@ -16,6 +16,8 @@ public class Filme {
 	private int idcategoriadofilme;
 	private int idtipocategoria;
 	private String nomecategoria;
+	private int idelenco;
+	
 	
 	public Filme(int idfilme, String titulo, String titulo_ingles, Date dataDeEstreia, float pontuacao) {
 
@@ -27,7 +29,7 @@ public class Filme {
 	}
 	
 	
-	public Filme(int idfilme, String titulo,int idpessoa,String nomepessoa, int tipoPessoa, String personagem) {
+	public Filme(int idfilme, String titulo,int idpessoa,String nomepessoa, int tipoPessoa, String personagem, int idelenco ) {
 		this.idfilme = idfilme;
 		this.titulo = titulo;
 		this.idpessoa = idpessoa;
@@ -54,6 +56,7 @@ public class Filme {
 		}else{
 			this.personagem = personagem;
 		}
+		this.idelenco = idelenco;
 	}
 	public Filme(int idfilme, String titulo, int idcategoriadofilme, int idtipocategoria, String nomecategoria){
 		this.idfilme = idfilme;
@@ -71,9 +74,8 @@ public class Filme {
 		this.nomepessoa = nomepessoa;
 		this.tipoPessoa = tipoPessoa;
 		this.personagem = personagem;
+		
 	}
-
-
 
 	public Filme() {
 		// TODO Auto-generated constructor stub
@@ -171,8 +173,16 @@ public class Filme {
 	public void setNomecategoria(String nomecategoria) {
 		this.nomecategoria = nomecategoria;
 	}
-	
-	
+
+
+	public int getIdelenco() {
+		return idelenco;
+	}
+
+
+	public void setIdelenco(int idelenco) {
+		this.idelenco = idelenco;
+	}
 	
 
 }

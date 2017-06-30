@@ -31,13 +31,13 @@ public class ServletExcluirPessoa extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			//Recuperar parametros
-		String idPessoa = request.getParameter("idpessoa");
+		String idElenco = request.getParameter("idelenco");
 		//Obter uma conexao com o BD
 		Connection conexao = new Conexao().getConexao();
 		//Criar a DAO
 		ExcluirPessoaDAO epd = new ExcluirPessoaDAO(conexao);
 		//Executar a exclusao
-		boolean resultado = epd.excluiPessoa(idPessoa);			
+		boolean resultado = epd.excluiPessoa(idElenco);			
 					//----- Escrevendo a resposta ao cliente -----
 					PrintWriter out = response.getWriter();
 					out.println("<HTML><HEAD><TITLE>EXCLUSÃO DE PESSOA</TITLE></HEAD>");

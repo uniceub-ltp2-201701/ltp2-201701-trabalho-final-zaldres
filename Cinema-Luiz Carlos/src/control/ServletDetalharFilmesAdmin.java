@@ -41,13 +41,14 @@ public class ServletDetalharFilmesAdmin extends HttpServlet {
 				//Criar Objeto DAO
 				DetalharFilmesDAO dfd = new DetalharFilmesDAO(conexao);
 				String idFilme = request.getParameter("idfilme");
+				
 				//
 				Filme f = dfd.getFilmePorId(idFilme);
 				request.setAttribute("Filme", f);
 				//
 				ArrayList<Filme> ElencoFilme = dfd.getElencoFilme(idFilme);
 				request.setAttribute("elencoFilme", ElencoFilme);
-				//
+		     	//
 				ListarPessoasDAO lpd = new ListarPessoasDAO(conexao);
 				ArrayList<Pessoa> ListarPessoas = lpd.getListarPessoas();
 				request.setAttribute("listarPessoas", ListarPessoas);

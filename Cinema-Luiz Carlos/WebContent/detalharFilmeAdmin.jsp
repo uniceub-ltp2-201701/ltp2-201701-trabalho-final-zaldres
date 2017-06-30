@@ -22,11 +22,12 @@ Filme f = (Filme) request.getAttribute("Filme");
 <h3>Data de estreia:<%out.println(f.getDataDeEstreia()); %></h3>
 <h3>Pontuação:<% out.println(f.getPontuacao()); %></h3>
 <table border=1>
-<tr><td>Elenco do Filme</td><td>Contratado no papel de</td><td>Personagem Interpretado</td></tr>
+<tr><td>Elenco do Filme</td><td>Contratado no papel de</td><td>Personagem Interpretado</td><td>Excluir do Elenco</td></tr>
 <%
 
 ArrayList<Filme> elencoFilme = (ArrayList<Filme>) request.getAttribute("elencoFilme");
 ArrayList<Pessoa> pessoas = (ArrayList<Pessoa>) request.getAttribute("listarPessoas");
+
 
 %>
 <% 
@@ -34,7 +35,7 @@ ArrayList<Pessoa> pessoas = (ArrayList<Pessoa>) request.getAttribute("listarPess
 for (int i = 0; i < elencoFilme.size(); i++){ 
 out.println("<tr><td>" + "<a href='/Cinema-Luiz_Carlos/detalhaPessoaAdmin?idpessoa="+ elencoFilme.get(i).getIdpessoa() +"'>" + 
 elencoFilme.get(i).getNomepessoa() +"</a></td><td> "+ elencoFilme.get(i).getTipoPessoa() + "</td><td>" +elencoFilme.get(i).getPersonagem() +"</td><td>" +
-"<FORM ACTION='excluiPessoa'>" + "<input type='hidden' name='idpessoa' value=" + elencoFilme.get(i).getIdpessoa() + ">" +
+"<FORM ACTION='excluiPessoa'>" + "<input type='hidden' name='idelenco' value=" + elencoFilme.get(i).getIdelenco() + ">" +
 "<input type='submit' value='Excluir'></form></td></tr>");}
 
  %>
@@ -55,7 +56,7 @@ out.println("<option value='" + p.getIdpessoa() + "'>" +  p.getNomepessoa() + "<
 </td>
 <td>
 <select name='tipopessoa'>
-<option name='tipopessoa' value='1'>Ator</option>
+<option  value='1'>Ator</option>
 <option  value='2'>Diretor</option>
 </select>
 </td>
