@@ -27,10 +27,28 @@
 	<a href="/Cinema-Luiz_Carlos/adicionarPessoas.jsp">Registrar Pessoas no Banco de Dados</a> <br />
 	<a href="/Cinema-Luiz_Carlos/adicionarFilmes.jsp">Registrar Filmes ou criar novas categorias para filmes no Banco de Dados</a> <br />
 
-	<form action="/Cinema/consultarFilme" method="get">
-		Buscar por titulo: <input type="text" name="titulo"><p>
-		<input type="submit" value="buscar">
-	</form>
+	<table border=1>
+		<tr><td>Lista de Filmes Por Pontuacao</td></tr>
+		<%for(Filme filme: filmes){%>
+		<form action='/Cinema-Luiz_Carlos/listarPorPontuacao?pontuacao=<%=filme.getPontuacao()%>"' method='GET'><%}%>
+			<tr><td>
+			<select name='pontuacao'>
+			<option  value='1'>1</option>
+            <option  value='2'>2</option>
+            <option  value='3'>3</option>
+            <option  value='4'>4</option>
+            <option  value='5'>5</option>
+            <option  value='6'>6</option>
+            <option  value='7'>7</option>
+            <option  value='8'>8</option>
+            <option  value='9'>9</option>
+            <option  value='10'>10</option>
+            </select>
+            </td>
+            </tr>
+		    </table>
+	        <INPUT TYPE='SUBMIT' VALUE='buscar'>
+	        </form>
 
 	<table border=1>
 		<tr><td>Listar Por genero</td></tr>

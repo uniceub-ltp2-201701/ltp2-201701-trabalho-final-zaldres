@@ -22,7 +22,7 @@ Filme f = (Filme) request.getAttribute("Filme");
 <h3>Data de estreia:<%out.println(f.getDataDeEstreia()); %></h3>
 <h3>Pontuação:<% out.println(f.getPontuacao()); %></h3>
 <table border=1>
-<tr><td>Elenco do Filme</td><td>Contratado no papel de</td><td>Personagem Interpretado</td><td>Excluir do Elenco</td></tr>
+<tr><td>Elenco do Filme</td><td>Contratado no papel de</td><td>Personagem Interpretado</td><td>Excluir no Elenco</td></tr>
 <%
 
 ArrayList<Filme> elencoFilme = (ArrayList<Filme>) request.getAttribute("elencoFilme");

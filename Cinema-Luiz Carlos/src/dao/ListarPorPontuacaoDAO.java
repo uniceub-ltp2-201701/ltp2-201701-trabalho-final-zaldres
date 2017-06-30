@@ -26,7 +26,7 @@ private Connection conexao;
 					rs = ps.executeQuery();
 					
 					while (rs.next()){
-						Filme lpp = new Filme(rs.getInt("idfilme"), rs.getString("titulo"), rs.getInt("idcategoriadofilme"), rs.getInt("idtipocategoria"), rs.getString("nomecategoria"));
+						Filme lpp = new Filme(rs.getInt("idfilme"), rs.getString("titulo"), rs.getString("titulo_ingles"), rs.getDate("datadeestreia"), rs.getInt("pontuacao"));
 						ListarPorPontuacao.add(lpp);
 					}
 					rs.close();

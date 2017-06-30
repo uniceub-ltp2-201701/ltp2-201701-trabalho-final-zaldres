@@ -14,9 +14,6 @@ import dao.Conexao;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.util.ArrayList;
-import model.AdicionarGeneroNoFilme;
-import model.Filme;;
-
 /**
  * Servlet implementation class ServletAdicionarGeneroaoFilme
  */
@@ -42,10 +39,35 @@ public class ServletAdicionarGeneroaoFilme extends HttpServlet {
 		Connection conexao = new Conexao().getConexao();
 		//Criar a DAO
 		AdicionarGeneroaoFilmeDAO agfd = new AdicionarGeneroaoFilmeDAO(conexao);
-		String idFilme = request.getParameter("idfilme");
-		//
-		ArrayList<Filme> AdicionarGeneroaoFilme = new agfd.
+		
+		boolean resultado = agfd.AdicionarGeneroaoFilme(idtipocategoria, idfilme);
+		PrintWriter out = response.getWriter();
+		out.println("<HTML><HEAD><TITLE>INCLUSÃO DE Genero de filme</TITLE></HEAD>");
+		out.println("<BODY>");
+		out.println("<form action='/Cinema-Luiz_Carlos/listarFilmesAdmin'><input type='submit' value='Veja se o genero foi adicionado na lista'></form>");
+				
+		//_______________________________________________VERIFICAR SE A INCLUSAO FOI BEM SUCEDIDA___________________________________________________________________________
+		//_______________________________________________PUXANDO O VALOR ALOCADO NA VARIAVEL "resultado" PRESENTE NA NOSSA CLASSE "IncluiDisciplinaDAO"_____________________
+		if (resultado) {
+			out.println("<TABLE border='1'>" +
+		                "<TR>" +
+					    "<TD><CENTER><FONT size='6'>GENERO ADICIONADO COM SUCESSO</FONT></CENTER></TD>" +
+		                "</TR>" +
+					    "</TABLE>");
+		} else {
+			out.println("<TABLE  border='1'>" +
+	                "<TR>" +
+				    "<TD><CENTER>ERRO AO ADICIONAR GENERO</FONT></CENTER></TD>" +
+	                "</TR>" +
+	                "<TR>" +
+				    "<TD><CENTER>OS DADOS FORAM INSERIDOS INCORRETAMENTE... TENTE NOVAMENTE MAIS TARDE</FONT></CENTER></TD>" +
+	                "</TR>" +
+				    "</TABLE>");
+		}
+				
+		out.println("</BODY></HTML>");
+	}
+
 		
 	}
 
-}

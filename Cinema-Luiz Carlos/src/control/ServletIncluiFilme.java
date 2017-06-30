@@ -14,7 +14,6 @@ import dao.Conexao;
 import dao.IncluiFilmeDAO;
 import java.io.PrintWriter;
 import java.sql.Connection;
-import java.io.PrintWriter;
 
 /**
  * Servlet implementation class ServletIncluiFilme
